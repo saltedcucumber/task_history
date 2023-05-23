@@ -1,0 +1,10 @@
+---
+# tasks file for TestDocker
+- name: Check If Docker Is Installed
+  command: docker --version
+  register: docker_valid
+
+     
+- name: Check If docker-compose Is Installed
+  command: docker-compose --version
+  register: docker_compose_valid

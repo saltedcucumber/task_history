@@ -1,0 +1,10 @@
+- hosts:
+    - all
+  
+  roles:
+    - dependesses
+    - { role: TestDocker, ignore_errors: yes }
+    - DockerInstall
+    - iptable
+    - nginx
+    - ConfigereNginx
