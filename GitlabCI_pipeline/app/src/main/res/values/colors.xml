@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/malibu</color>
+    <color name="colorPrimaryDark">@color/stratos</color>
+
+    <!-- To use black or white colors call system values @android:color/black -->
+    <color name="cornflowerBlue">#8460F8</color>
+    <color name="mineShaft">#222222</color>
+    <color name="flamingo">#F66100</color>
+    <color name="doveGray">#666666</color>
+    <color name="eliteViolet">#5E2FF5</color>
+    <color name="mountainMeadow">#20CD80</color>
+    <color name="stratos">#000D4C</color>
+    <color name="saffron">#F5BE2F</color>
+    <color name="whiteLilak">#EDE7F6</color>
+    <color name="aeroBlue">#C8FFE7</color>
+    <color name="varden">#FFF6DD</color>
+    <color name="fog">#E4DBFF</color>
+
+    <!-- New -->
+    <color name="tundora">#404040</color>
+    <color name="malibu">#84AEFF</color>
+    <color name="gray">#909090</color>
+    <color name="alto">#DFDFDF</color>
+    <color name="bittersweet">#FF6C6C</color>
+    <color name="alabaster">#FAFAFA</color>
+    <color name="zircon">#F1F5FF</color>
+    <color name="silver">#BEBEBE</color>
+    <color name="gallery">#EFEFEF</color>
+    <color name="periwinkle">#C7DAFF</color>
+    <color name="zumthor">#E7EFFF</color>
+    <color name="melrose">#9288FF</color>
+    <color name="serenade">#FFF5EA</color>
+    <color name="selective_yellow">#FFB800</color>
+    <color name="puertoRico">#46B7A3</color>
+    <color name="fairPink">#FFEAEA</color>
+    <color name="frostedMint">#DBFFF9</color>
+    <color name="tropicalBlue">#D7EAF9</color>
+    <color name="shamrock">#41D686</color>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tradeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_transaction_margin"
+        android:layout_marginTop="@dimen/item_transaction_margin"
+        android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="24.02.2022 / 23:07" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/leftCurrencyIcon"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/item_transaction_margin"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tradeDate"
+        tools:src="@drawable/ic_eth" />
+
+    <TextView
+        android:id="@+id/leftCurrencyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintBottom_toBottomOf="@+id/leftCurrencyIcon"
+        app:layout_constraintStart_toEndOf="@id/leftCurrencyIcon"
+        app:layout_constraintTop_toTopOf="@id/leftCurrencyIcon"
+        tools:text="BTC" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tradeTypeIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/leftCurrencyName"
+        app:layout_constraintEnd_toStartOf="@id/rightCurrencyIcon"
+        app:layout_constraintStart_toEndOf="@id/leftCurrencyName"
+        app:layout_constraintTop_toTopOf="@id/leftCurrencyName"
+        tools:src="@drawable/ic_arrow_buy" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rightCurrencyIcon"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/item_transaction_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@id/rightCurrencyName"
+        app:layout_constraintTop_toBottomOf="@+id/tradeDate"
+        tools:src="@drawable/ic_usd" />
+
+    <TextView
+        android:id="@+id/rightCurrencyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintBottom_toBottomOf="@+id/leftCurrencyIcon"
+        app:layout_constraintEnd_toStartOf="@id/tradeDetails"
+        app:layout_constraintTop_toTopOf="@id/leftCurrencyIcon"
+        tools:text="BTC" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tradeDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:src="@drawable/ic_trade_details"
+        app:layout_constraintBottom_toBottomOf="@id/rightCurrencyName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rightCurrencyName" />
+
+    <TextView
+        android:id="@+id/amountCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintBottom_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leftCurrencyIcon"
+        tools:text="0.397801 BTC /" />
+
+    <TextView
+        android:id="@+id/receivedCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+        app:layout_constraintStart_toEndOf="@id/amountCurrency"
+        app:layout_constraintTop_toTopOf="@+id/amountCurrency"
+        tools:text=" 0.397801 BTC" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

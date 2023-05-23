@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/headerTextView"
+        style="@style/TextAppearance.SemiBold.17.Tundora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/history_details"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="@dimen/default_horizontal_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/crossButton"
+        style="?attr/selectableItemBackgroundBorderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/headerTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/headerTextView"
+        app:layout_constraintTop_toTopOf="@+id/headerTextView"
+        app:srcCompat="@drawable/ic_cross_to_close" />
+
+    <!-- OrderId -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/orderIdHeaderTextView"
+        style="@style/TextAppearance.Regular.14.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/order_id"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/headerTextView"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/orderIdValueTextView"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/orderIdHeaderTextView"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"
+        tools:text="9298" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/orderIdBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="orderIdHeaderTextView,orderIdValueTextView" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/orderIdDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/orderIdBarrier" />
+
+    <!-- Type -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/typeHeaderTextView"
+        style="@style/TextAppearance.Regular.14.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/type"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/orderIdDivider"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/typeValueTextView"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/typeHeaderTextView"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"
+        tools:text="Market" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/typeBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="typeHeaderTextView,typeValueTextView" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/typeDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/typeBarrier" />
+
+    <!-- Currency -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/currencyHeaderTextView"
+        style="@style/TextAppearance.Regular.14.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/currency"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/typeDivider"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/currencyValueTextView"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/currencyHeaderTextView"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"
+        tools:text="DWRLD" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/currencyBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="currencyHeaderTextView,currencyValueTextView" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/currencyDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/currencyBarrier" />
+
+    <!-- Date -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateHeaderTextView"
+        style="@style/TextAppearance.Regular.14.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/date"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/currencyDivider"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateValueTextView"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/dateHeaderTextView"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"
+        tools:text="24.02.2022" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/dateBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="dateHeaderTextView,dateValueTextView" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/dateDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dateBarrier" />
+
+    <!-- Side -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sideHeaderTextView"
+        style="@style/TextAppearance.Regular.14.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/side"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dateDivider"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sideValueTextView"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/sideHeaderTextView"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"
+        tools:text="Sell" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/sideBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="sideHeaderTextView,sideValueTextView" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/sideDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/sideBarrier" />
+
+    <!-- Price -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/priceHeaderTextView"
+        style="@style/TextAppearance.Regular.14.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/price"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/sideDivider"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/priceValueTextView"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/priceHeaderTextView"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"
+        tools:text="1" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/priceBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="priceHeaderTextView,priceValueTextView" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/priceDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/priceBarrier" />
+
+    <!-- Fee -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/feeHeaderTextView"
+        style="@style/TextAppearance.Regular.14.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/fee"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/priceDivider"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/feeValueTextView"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/feeHeaderTextView"
+        app:layout_constraintWidth="wrap_content_constrained"
+        app:layout_constrainedHeight="true"
+        tools:text="0 DWRLD" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/feeBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="feeHeaderTextView,feeValueTextView" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/feeDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/feeBarrier" />
+
+    <!-- Amount -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/totalHeaderTextView"
+        style="@style/TextAppearance.Regular.14.Gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/total"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/headerTextView"
+        app:layout_constraintTop_toBottomOf="@+id/feeDivider"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth="wrap_content_constrained" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/totalValueTextView"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="60dp"
+        android:textAlignment="textEnd"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/crossButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/totalHeaderTextView"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth="wrap_content_constrained"
+        tools:text="0.0000 EOS" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/amountBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="totalHeaderTextView,totalValueTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

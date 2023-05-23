@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/more_bottom_tab"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/TextAppearance.SemiBold.17.Tundora" />
+
+        <TextView
+            android:id="@+id/historyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="34dp"
+            android:text="@string/history"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <View
+            android:id="@+id/tradingHistoryButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/tradingHistoryDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tradingHistoryIcon" />
+
+        <ImageView
+            android:id="@+id/tradingHistoryIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_trading_history"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/historyTitle" />
+
+        <TextView
+            android:id="@+id/tradingHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/trading_history"
+            android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+            app:layout_constraintStart_toEndOf="@+id/tradingHistoryIcon"
+            app:layout_constraintTop_toTopOf="@+id/tradingHistoryIcon" />
+
+        <TextView
+            android:id="@+id/tradingHistoryDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/view_trading_operations"
+            android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tradingHistory"
+            app:layout_constraintTop_toBottomOf="@+id/tradingHistory" />
+
+        <View
+            android:id="@+id/transactionHistoryButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/transactionHistoryDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/transactionHistoryIcon" />
+
+        <ImageView
+            android:id="@+id/transactionHistoryIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_transaction_history"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tradingHistoryDescription" />
+
+        <TextView
+            android:id="@+id/transactionHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/transaction_history"
+            android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+            app:layout_constraintStart_toEndOf="@+id/transactionHistoryIcon"
+            app:layout_constraintTop_toTopOf="@+id/transactionHistoryIcon" />
+
+        <TextView
+            android:id="@+id/transactionHistoryDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/view_deposit_and_withdraw_operations"
+            android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/transactionHistory"
+            app:layout_constraintTop_toBottomOf="@+id/transactionHistory" />
+
+        <TextView
+            android:id="@+id/documentsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:text="@string/documents"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transactionHistoryDescription" />
+
+        <View
+            android:id="@+id/documentsButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/documentsDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/documentsIcon" />
+
+        <ImageView
+            android:id="@+id/documentsIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_documents"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/documentsTitle" />
+
+        <TextView
+            android:id="@+id/documents"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/documents"
+            android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+            app:layout_constraintStart_toEndOf="@+id/documentsIcon"
+            app:layout_constraintTop_toTopOf="@+id/documentsIcon" />
+
+        <TextView
+            android:id="@+id/documentsDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/access_to_your_uploaded_files"
+            android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/documents"
+            app:layout_constraintTop_toBottomOf="@+id/documents" />
+
+        <TextView
+            android:id="@+id/profileSettingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:text="@string/profile_settings"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/documentsDescription" />
+
+        <View
+            android:id="@+id/profileSettingsButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/profileSettingsDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/profileSettingsIcon" />
+
+        <ImageView
+            android:id="@+id/profileSettingsIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_profile_settings"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileSettingsTitle" />
+
+        <TextView
+            android:id="@+id/profileSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/profile_amp_security_settings"
+            android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profileSettingsIcon"
+            app:layout_constraintTop_toTopOf="@+id/profileSettingsIcon" />
+
+        <TextView
+            android:id="@+id/profileSettingsDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/change_email_change_password_2fa"
+            android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/profileSettings"
+            app:layout_constraintTop_toBottomOf="@+id/profileSettings" />
+
+        <View
+            android:id="@+id/referralsButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/referralsDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/referralsIcon" />
+
+        <ImageView
+            android:id="@+id/referralsIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_referrals"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileSettingsDescription" />
+
+        <TextView
+            android:id="@+id/referrals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/referrals"
+            android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+            app:layout_constraintStart_toEndOf="@+id/referralsIcon"
+            app:layout_constraintTop_toTopOf="@+id/referralsIcon" />
+
+        <TextView
+            android:id="@+id/referralsDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/send_invitations_to_your_friends"
+            android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/referrals"
+            app:layout_constraintTop_toBottomOf="@+id/referrals" />
+
+        <TextView
+            android:id="@+id/verificationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:text="@string/verification"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/referralsDescription" />
+
+        <View
+            android:id="@+id/verificationButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/verificationDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/verificationIcon" />
+
+        <ImageView
+            android:id="@+id/verificationIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_verification"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verificationTitle" />
+
+        <TextView
+            android:id="@+id/verification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/user_verification"
+            android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+            app:layout_constraintStart_toEndOf="@+id/verificationIcon"
+            app:layout_constraintTop_toTopOf="@+id/verificationIcon" />
+
+        <ImageView
+            android:id="@+id/userVerificationStatus"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/verification"
+            app:layout_constraintStart_toEndOf="@+id/verification"
+            app:layout_constraintTop_toTopOf="@+id/verification" />
+
+        <TextView
+            android:id="@+id/verificationDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/verification_not_completed"
+            android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/verification"
+            app:layout_constraintTop_toBottomOf="@+id/verification" />
+
+        <TextView
+            android:id="@+id/activityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:text="@string/activity"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verificationDescription" />
+
+        <View
+            android:id="@+id/activityLogButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/activityLogDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/activityLogIcon" />
+
+        <ImageView
+            android:id="@+id/activityLogIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_activity_log"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activityTitle" />
+
+        <TextView
+            android:id="@+id/activityLog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/activity_log"
+            android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+            app:layout_constraintStart_toEndOf="@+id/activityLogIcon"
+            app:layout_constraintTop_toTopOf="@+id/activityLogIcon" />
+
+        <TextView
+            android:id="@+id/activityLogDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/history_of_actions"
+            android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/activityLog"
+            app:layout_constraintTop_toBottomOf="@+id/activityLog" />
+
+        <TextView
+            android:id="@+id/faqTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:text="@string/faq"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activityLogDescription" />
+
+        <View
+            android:id="@+id/faqButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/faqDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/faqIcon" />
+
+        <ImageView
+            android:id="@+id/faqIcon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_faq"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/faqTitle" />
+
+        <TextView
+            android:id="@+id/faq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/faq"
+            android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+            app:layout_constraintStart_toEndOf="@+id/faqIcon"
+            app:layout_constraintTop_toTopOf="@+id/faqIcon" />
+
+        <TextView
+            android:id="@+id/faqDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/answers_on_popular_questions"
+            android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/faq"
+            app:layout_constraintTop_toBottomOf="@+id/faq" />
+
+        <TextView
+            android:id="@+id/logoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/log_out"
+            android:textAppearance="@style/TextAppearance.Medium.14.Bittersweet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/faqDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

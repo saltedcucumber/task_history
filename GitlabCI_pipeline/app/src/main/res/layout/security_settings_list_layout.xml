@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/default_rounded_corners_alabaster_background"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/changePasswordTextView"
+        style="@style/TextAppearance.SemiBold.16.Tundora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_arrow_forward"
+        android:paddingEnd="10dp"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:text="@string/change_password" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/changePasswordDivider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:background="@color/gray" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/twoFATextView"
+        style="@style/TextAppearance.SemiBold.16.Tundora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_arrow_forward"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:paddingEnd="10dp"
+        android:text="@string/two_factor_authentication" />
+</LinearLayout>

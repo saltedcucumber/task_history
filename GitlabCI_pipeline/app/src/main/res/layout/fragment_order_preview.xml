@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="22dp"
+        android:padding="@dimen/image_button_padding"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/orderPreviewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="@string/order_preview"
+        android:textAppearance="@style/TextAppearance.SemiBold.17.Tundora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tokenTextView"
+        style="@style/TextAppearance.SemiBold.18.Tundora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="34dp"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderPreviewHeader"
+        tools:drawableStart="@drawable/ic_eth"
+        tools:text="1 ETH" />
+
+    <include
+        android:id="@+id/paymentTypeLayout"
+        layout="@layout/item_payment_type_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tokenTextView"
+        app:layout_constraintTop_toBottomOf="@+id/tokenTextView" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/paymentTypeDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/paymentTypeLayout"
+        app:layout_constraintStart_toStartOf="@+id/paymentTypeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTypeLayout" />
+
+    <include
+        android:id="@+id/exchangeCourseLayout"
+        layout="@layout/item_exchange_course_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/paymentTypeLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/paymentTypeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/paymentTypeDivider" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/exchangeCourseDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/exchangeCourseLayout"
+        app:layout_constraintStart_toStartOf="@+id/exchangeCourseLayout"
+        app:layout_constraintTop_toBottomOf="@+id/exchangeCourseLayout" />
+
+    <include
+        android:id="@+id/exchangeCommissionLayout"
+        layout="@layout/item_exchange_commission_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/paymentTypeLayout"
+        app:layout_constraintStart_toStartOf="@+id/exchangeCourseLayout"
+        app:layout_constraintTop_toBottomOf="@+id/exchangeCourseDivider" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/exchangeCommissionDivider"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/dash_line"
+        app:layout_constraintEnd_toEndOf="@+id/exchangeCommissionLayout"
+        app:layout_constraintStart_toStartOf="@+id/exchangeCommissionLayout"
+        app:layout_constraintTop_toBottomOf="@+id/exchangeCommissionLayout" />
+
+    <include
+        android:id="@+id/totalExchangePriceLayout"
+        layout="@layout/item_total_exchange_price_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/exchangeCommissionLayout"
+        app:layout_constraintStart_toStartOf="@+id/exchangeCommissionLayout"
+        app:layout_constraintTop_toBottomOf="@+id/exchangeCommissionDivider" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmButton"
+        style="@style/AppButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/confirm_button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/exchangeCommissionLayout"
+        app:layout_constraintStart_toStartOf="@+id/exchangeCommissionLayout"
+        app:layout_constraintTop_toBottomOf="@+id/totalExchangePriceLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

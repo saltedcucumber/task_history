@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "271838268781",
+    "project_id": "dwmob-344307",
+    "storage_bucket": "dwmob-344307.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271838268781:android:5355ab97a03657b18d1e64",
+        "android_client_info": {
+          "package_name": "com.cryptoexchange.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271838268781-8n9skq6p1tt81vued01fb578th0rpgjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARN4hIp20UoPSPylPhf4y68PLeO6mlr8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271838268781-8n9skq6p1tt81vued01fb578th0rpgjm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "271838268781-cg2tfqvmn7djq3r9npkdnfda4888fcjn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.innowisegroup.cryptoExchange"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271838268781:android:068b955f372b34598d1e64",
+        "android_client_info": {
+          "package_name": "com.decent.world"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271838268781-8n9skq6p1tt81vued01fb578th0rpgjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARN4hIp20UoPSPylPhf4y68PLeO6mlr8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271838268781-8n9skq6p1tt81vued01fb578th0rpgjm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "271838268781-cg2tfqvmn7djq3r9npkdnfda4888fcjn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.innowisegroup.cryptoExchange"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AppInputLayout.DropDownMenu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+    android:hint="@string/type"
+    app:endIconMode="dropdown_menu"
+    app:endIconTint="@color/tundora"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+        android:id="@+id/transactionTypeACTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:inputType="none"
+        android:textColor="@color/tundora" />
+</com.google.android.material.textfield.TextInputLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/exchange"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/TextAppearance.SemiBold.17.Tundora" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parentConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/convertedExchangeTextView"
+                style="@style/TextAppearance.Medium.14.Tundora"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/converted_exchange_text_view_margin_top"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@+id/exchangeTypeLayout"
+                app:layout_constraintStart_toStartOf="@+id/exchangeTypeLayout"
+                app:layout_constraintTop_toBottomOf="@+id/limitTransactionPriceLayout"
+                tools:text="1 ETH = 0,075 BTC" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/feeTextView"
+                style="@style/TextAppearance.Medium.14.Tundora"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/converted_exchange_text_view_margin_top"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@+id/exchangeTypeLayout"
+                app:layout_constraintStart_toStartOf="@+id/exchangeTypeLayout"
+                app:layout_constraintTop_toBottomOf="@+id/convertedExchangeTextView"
+                tools:text="Commission: 0,075 BTC" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/orderButton"
+                style="@style/AppButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/order_button_vertical_margin"
+                android:enabled="false"
+                android:text="@string/exchange_button_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/exchangeTypeLayout"
+                app:layout_constraintStart_toStartOf="@+id/exchangeTypeLayout"
+                app:layout_constraintTop_toBottomOf="@+id/feeTextView"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/transactionTabLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+                android:layout_marginTop="@dimen/transaction_tab_layout_margin_top"
+                android:background="@drawable/default_rounded_corners_alabaster_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIndicatorHeight="0dp">
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <include
+                android:id="@+id/exchangeTypeLayout"
+                layout="@layout/exchange_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/exchange_type_layout_margin_top"
+                app:layout_constraintEnd_toEndOf="@+id/transactionTabLayout"
+                app:layout_constraintStart_toStartOf="@+id/transactionTabLayout"
+                app:layout_constraintTop_toBottomOf="@+id/transactionTabLayout" />
+
+            <include
+                android:id="@+id/limitTransactionPriceLayout"
+                layout="@layout/limit_transaction_price_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/limit_transaction_price_field_margin_top"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/exchangeTypeLayout"
+                app:layout_constraintStart_toStartOf="@+id/exchangeTypeLayout"
+                app:layout_constraintTop_toBottomOf="@+id/exchangeTypeLayout"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

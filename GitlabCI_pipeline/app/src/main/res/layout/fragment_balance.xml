@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/balance_background">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/balanceSearch"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_height"
+        android:theme="@style/AppSearchView"
+        app:defaultQueryHint="@string/search"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toStartOf="@id/verticalDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryBackground="@android:color/transparent"
+        app:queryHint="@string/search"
+        app:searchHintIcon="@drawable/ic_search"
+        app:searchIcon="@drawable/ic_search" />
+
+    <View
+        android:id="@+id/verticalDivider"
+        android:layout_width="@dimen/divider_stroke_width"
+        android:layout_height="0dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@id/balanceSearch"
+        app:layout_constraintEnd_toStartOf="@id/hideZeroBalances"
+        app:layout_constraintStart_toEndOf="@id/balanceSearch"
+        app:layout_constraintTop_toTopOf="@id/balanceSearch" />
+
+    <TextView
+        android:id="@+id/hideZeroBalances"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/hide_0_balances"
+        android:textAppearance="@style/TextAppearance.Regular.12.Gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/verticalDivider"
+        app:layout_constraintTop_toTopOf="@id/balanceSearch" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/zeroBalancesSwitch"
+        style="@style/AppSwitchMaterial"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        app:layout_constraintStart_toStartOf="@id/hideZeroBalances"
+        app:layout_constraintTop_toBottomOf="@id/hideZeroBalances" />
+
+    <View
+        android:id="@+id/horizontalDivider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/divider_stroke_width"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balanceSearch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/balanceRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalDivider" />
+</androidx.constraintlayout.widget.ConstraintLayout>

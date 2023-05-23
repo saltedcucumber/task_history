@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp">
+
+    <ImageView
+        android:id="@+id/currencyIcon"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/coinTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/coin"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintStart_toEndOf="@id/currencyIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/coinValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toStartOf="@+id/nameValue"
+        app:layout_constraintStart_toStartOf="@id/coinTitle"
+        app:layout_constraintTop_toBottomOf="@id/coinTitle"
+        tools:text="0.000000" />
+
+    <TextView
+        android:id="@+id/nameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:text="@string/name"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintStart_toEndOf="@id/coinTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toStartOf="@+id/totalBalanceValue"
+        app:layout_constraintStart_toStartOf="@id/nameTitle"
+        app:layout_constraintTop_toBottomOf="@id/nameTitle"
+        tools:text="0.000000" />
+
+    <TextView
+        android:id="@+id/totalBalanceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:text="@string/total_balance"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalBalanceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toEndOf="@+id/totalBalanceTitle"
+        app:layout_constraintTop_toBottomOf="@id/totalBalanceTitle"
+        tools:text="0.000000" />
+
+    <TextView
+        android:id="@+id/availableBalanceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/available_balance"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintStart_toStartOf="@id/currencyIcon"
+        app:layout_constraintTop_toBottomOf="@+id/currencyIcon" />
+
+    <TextView
+        android:id="@+id/availableBalanceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintStart_toStartOf="@+id/availableBalanceTitle"
+        app:layout_constraintTop_toBottomOf="@id/availableBalanceTitle"
+        tools:text="0.000000" />
+
+    <TextView
+        android:id="@+id/reservedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:text="@string/reserved"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintStart_toEndOf="@+id/availableBalanceTitle"
+        app:layout_constraintTop_toBottomOf="@+id/currencyIcon" />
+
+    <TextView
+        android:id="@+id/reservedTitleValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintStart_toStartOf="@+id/reservedTitle"
+        app:layout_constraintTop_toBottomOf="@id/reservedTitle"
+        tools:text="0.000000" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/depositButton"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="9dp"
+        android:text="@string/deposit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/withdrawButton"
+        app:layout_constraintStart_toStartOf="@id/availableBalanceValue"
+        app:layout_constraintTop_toBottomOf="@id/availableBalanceValue" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/withdrawButton"
+        style="@style/AppButton.Outlined"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:text="@string/withdraw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/depositButton"
+        app:layout_constraintTop_toTopOf="@id/depositButton" />
+
+    <View
+        android:id="@+id/bottomDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/depositButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

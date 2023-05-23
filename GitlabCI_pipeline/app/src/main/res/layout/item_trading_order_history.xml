@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/priceValueTextView"
+        style="@style/TextAppearance.Medium.10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/priceGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="29710.99" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/amountValueTextView"
+        style="@style/TextAppearance.Medium.10.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        app:layout_constraintEnd_toStartOf="@+id/amountGuideline"
+        app:layout_constraintStart_toStartOf="@+id/priceGuideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0.056412" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateValueTextView"
+        style="@style/TextAppearance.Medium.10.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/amountGuideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="25.05 / 08:05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amountGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/priceGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+</androidx.constraintlayout.widget.ConstraintLayout>

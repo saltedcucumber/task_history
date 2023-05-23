@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="22dp"
+        android:padding="@dimen/image_button_padding"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/withdrawHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="@string/withdraw"
+        android:textAppearance="@style/TextAppearance.SemiBold.17.Tundora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tokenTextView"
+        style="@style/TextAppearance.SemiBold.18.Tundora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/ic_eth"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/withdrawAllAmountTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/withdrawHeader"
+        app:layout_constraintWidth="wrap_content_constrained"
+        tools:text="ETH" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/withdrawAllAmountTextView"
+        style="@style/TextAppearance.Medium.14.Malibu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="@string/withdraw_all_amount"
+        app:layout_constraintBottom_toBottomOf="@id/tokenTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tokenTextView" />
+
+    <LinearLayout
+        android:id="@+id/inputsContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/default_rounded_corners_alabaster_background"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tokenTextView">
+
+        <include
+            android:id="@+id/amountLayout"
+            layout="@layout/withdraw_amount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/receiveAddressLayout"
+            layout="@layout/withdraw_receive_address_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/memoLayout"
+            layout="@layout/withdraw_memo_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/tfaCodeLayout"
+            layout="@layout/withdraw_tfa_code_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/exchangeCommissionDivider"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/dash_line"
+        app:layout_constraintEnd_toEndOf="@+id/inputsContainer"
+        app:layout_constraintStart_toStartOf="@+id/inputsContainer"
+        app:layout_constraintTop_toBottomOf="@+id/inputsContainer" />
+
+    <include
+        android:id="@+id/remainsContainer"
+        layout="@layout/tokens_remains_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/exchangeCommissionDivider"
+        app:layout_constraintStart_toStartOf="@+id/exchangeCommissionDivider"
+        app:layout_constraintTop_toBottomOf="@+id/exchangeCommissionDivider" />
+
+    <TextView
+        android:id="@+id/withdrawFeeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/fee"
+        android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/remainsContainer"
+        app:layout_constraintTop_toBottomOf="@+id/remainsContainer" />
+
+    <TextView
+        android:id="@+id/withdrawFee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+        app:layout_constraintEnd_toEndOf="@id/remainsContainer"
+        app:layout_constraintTop_toBottomOf="@+id/remainsContainer" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonProceed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/horizontal_margin"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:text="@string/proceed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remainsContainer"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

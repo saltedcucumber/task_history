@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/receiveMemoInputLayout"
+    style="@style/AppInputLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/receive_memo"
+    android:visibility="gone"
+    app:endIconDrawable="@drawable/ic_clipboard"
+    app:endIconMode="custom"
+    app:endIconTint="@color/tundora"
+    tools:visibility="visible">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/receiveMemoEditText"
+        style="@style/Widget.TextInputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:inputType="text" />
+</com.google.android.material.textfield.TextInputLayout>

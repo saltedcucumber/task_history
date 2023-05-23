@@ -1,0 +1,218 @@
+image: androidsdk/android-31
+
+pipelines:
+  pull-requests:
+    feature/*:
+      - step:
+          name: SonarQube analysis
+          caches:
+            - gradle 
+            - sonar
+          script:
+            - cd distribution 
+            - cat sonarqube_sprint >> sonarqube
+            - cd ..
+            - cat version.gradle
+            - chmod +x gradlew 
+            - ./gradlew sonarqube
+   
+    # bugfix/*:
+    #   - step:
+    #       name: SonarQube analysis
+    #       caches:
+    #         - gradle 
+    #         - sonar
+    #       script:
+    #         - env 
+    #         - unset SONAR_TOKEN
+           
+    #         - export SONAR_TOKEN=$SONAR_TOKER_BUGFIX 
+    #         - cd distribution 
+    #         - cat sonarqube_debug >> sonarqube
+    #         - cd ..
+    #         - chmod +x gradlew 
+    #         - env 
+    #         - ./gradlew sonarqube  
+    develop:
+      - step:
+          name: SonarQube analysis
+          caches:
+            - gradle
+            - sonar
+          script:
+            - chmod +x gradlew 
+            - ./gradlew sonarqube
+            
+    master:
+      - step:
+          name: SonarQube analysis
+          caches:
+            - gradle
+            - sonar
+          script:
+            - chmod +x gradlew 
+            - ./gradlew sonarqube
+                    
+  branches:
+    'release/*':
+      - parallel: 
+        - step:
+            name: Upload debug
+            script:
+              - cd distribution
+              - chmod +x version_patch.sh
+              - ./version_patch.sh
+              - cp releasenotes_debug.template.txt  releasenotes_debug.txt
+              - cp releasenotes_release.tempate.txt releasenotes_release.txt
+              - chmod +x git_log.sh
+              - ./git_log.sh
+              - cd .. 
+              - ./gradlew --stop 
+              - ./gradlew assembleDebug appDistributionUploadDebug 
+              - cd distribution
+              - rm releasenotes_debug.txt
+              
+            artifacts:
+                - app/build/outputs/**
+        - step:
+            name: Upload release
+            script:
+              - cd distribution
+              - chmod +x version_patch.sh
+              - ./version_patch.sh
+              - cp releasenotes_debug.template.txt  releasenotes_debug.txt
+              - cp releasenotes_release.tempate.txt releasenotes_release.txt
+              - chmod +x git_log.sh
+              - ./git_log.sh
+              - cd ..  
+              - ./gradlew --stop 
+              - ./gradlew assembleRelease appDistributionUploadRelease
+              - cd distribution
+              - rm releasenotes_release.txt
+            artifacts:
+                - app/build/outputs/*
+     
+      - step:
+            name: Change version
+            script:
+             - cd distribution
+             - chmod +x version_patch.sh
+             - ./version_patch.sh
+             - chmod +x add_git_tag.sh
+             - cd ..
+             - git add .
+             - git commit -m "[skip ci] Update version"
+             - cd distribution  
+             - ./add_git_tag.sh 
+             - git push 
+             - git push --tags
+
+    'develop':
+      - parallel: 
+        - step:
+            name: Upload debug
+            script:
+              - cd distribution
+              - chmod +x version_minor.sh
+             # - ./version_minor.sh
+              - cp releasenotes_debug.template.txt  releasenotes_debug.txt
+              - cp releasenotes_release.tempate.txt releasenotes_release.txt
+              - chmod +x git_log.sh
+              - ./git_log.sh
+              - cd .. 
+              - ./gradlew --stop 
+              - ./gradlew assembleDebug appDistributionUploadDebug 
+              - cd distribution
+              - rm releasenotes_debug.txt
+              
+            artifacts:
+                - app/build/outputs/**
+        - step:
+            name: Upload release
+            script:
+              - cd distribution
+              - chmod +x version_minor.sh
+              #- ./version_minor.sh
+              - cp releasenotes_debug.template.txt  releasenotes_debug.txt
+              - cp releasenotes_release.tempate.txt releasenotes_release.txt
+              - chmod +x git_log.sh
+              - ./git_log.sh
+              - cd ..  
+              - ./gradlew --stop 
+              - ./gradlew assembleRelease appDistributionUploadRelease
+              - cd distribution
+              - rm releasenotes_release.txt
+            artifacts:
+                - app/build/outputs/*
+     
+      - step:
+            name: Change version
+            script:
+             - cd distribution
+             - chmod +x version_minor.sh
+             - ./version_minor.sh
+             - chmod +x add_git_tag.sh
+             - cd ..
+             - git add .
+             - git commit -m "[skip ci] Update version"
+             - cd distribution  
+             - ./add_git_tag.sh 
+             - git push 
+             - git push --tags
+
+    # 'bugfix/*':
+    #   - parallel: 
+    #     - step:
+    #         name: Upload debug
+    #         script:
+    #           - cd distribution
+    #           - chmod +x version_patch.sh
+    #           - ./version_patch.sh
+    #           - cp releasenotes_debug_bugfix.template.txt  releasenotes_debug.txt
+    #           - cp releasenotes_release_bugfix.tempate.txt releasenotes_release.txt
+    #           - chmod +x git_log.sh
+    #           - ./git_log.sh
+    #           - cd .. 
+    #           - ./gradlew --stop 
+    #           - ./gradlew assembleDebug appDistributionUploadDebug 
+    #           - cd distribution
+    #           - rm releasenotes_debug.txt
+              
+    #         artifacts:
+    #             - app/build/outputs/**
+    #     - step:
+    #         name: Upload release
+    #         script:
+    #           - cd distribution
+    #           - chmod +x version_patch.sh
+    #           - ./version_patch.sh
+    #           - cp releasenotes_debug_bugfix.template.txt  releasenotes_debug.txt
+    #           - cp releasenotes_release_bugfix.tempate.txt releasenotes_release.txt
+    #           - chmod +x git_log.sh
+    #           - ./git_log.sh
+    #           - cd ..  
+    #           - ./gradlew --stop 
+    #           - ./gradlew assembleRelease appDistributionUploadRelease
+    #           - cd distribution
+    #           - rm releasenotes_release.txt
+    #         artifacts:
+    #             - app/build/outputs/*
+     
+      # - step:
+      #       name: Change version
+      #       script:
+      #        - cd distribution
+      #        - chmod +x version_patch.sh
+      #        - ./version_patch.sh
+      #        - chmod +x add_git_tag.sh
+      #        - cd ..
+      #        - git add .
+      #        - git commit -m "[skip ci] Update version"
+      #        - cd distribution  
+      #        - ./add_git_tag.sh 
+      #        - git push 
+      #        - git push --tags
+
+definitions:
+  caches:
+    sonar: ~/.sonar

@@ -1,0 +1,31 @@
+version: "3"
+services:
+  frontend: 
+    build: frontend/
+    ports:
+      - "3000:3000"
+    networks:
+      - net
+    depends_on:
+      - db
+  backend:
+    build: backend/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - net
+#  nginx: 
+#    image: nginx:latest
+  db:
+    build: mysql/
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:80"
+    networks:
+      - net
+
+networks:
+  net:

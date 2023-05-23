@@ -1,0 +1,9 @@
+sonarqube {
+  properties {
+    property "sonar.projectKey", "decent-world-android-bugfix-lklckvlk26sd6"
+    property "sonar.projectName", "decent-world-android-bugfix"	
+  }
+}                  
+
+
+

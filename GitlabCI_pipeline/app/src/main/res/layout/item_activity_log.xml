@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
+
+    <TextView
+        android:id="@+id/activityLogDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="May 19 2022, 09:58" />
+
+    <ImageView
+        android:id="@+id/activityLogIcon"
+        android:layout_width="16dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_lock"
+        app:layout_constraintStart_toStartOf="@id/activityLogDate"
+        app:layout_constraintTop_toBottomOf="@id/activityLogDate" />
+
+    <TextView
+        android:id="@+id/activityLogData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="10dp"
+        android:textAppearance="@style/TextAppearance.Regular.14.Tundora"
+        app:layout_constraintEnd_toStartOf="@id/activityLogCountry"
+        app:layout_constraintStart_toEndOf="@id/activityLogIcon"
+        app:layout_constraintTop_toTopOf="@id/activityLogIcon"
+        tools:text="New IP registered" />
+
+    <TextView
+        android:id="@+id/activityLogAdditionalData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/activityLogDivider"
+        app:layout_constraintStart_toStartOf="@id/activityLogData"
+        app:layout_constraintTop_toBottomOf="@id/activityLogData"
+        tools:text="46.56.247.151" />
+
+    <View
+        android:id="@+id/activityLogDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/activityLogCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:textAppearance="@style/TextAppearance.Regular.14.Tundora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/activityLogData"
+        tools:text="Belarus • Minsk" />
+
+    <TextView
+        android:id="@+id/activityLogCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:layout_marginBottom="12dp"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintBottom_toTopOf="@id/activityLogDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activityLogCountry"
+        tools:text="Belarus • Minsk" />
+</androidx.constraintlayout.widget.ConstraintLayout>

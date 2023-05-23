@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.frontend.ReleaseName }}
+  labels:
+    app: {{ .Values.frontend.labels }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.frontend.labels }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.frontend.labels }}
+    spec:
+      containers:
+        - name: {{ .Values.frontend.container.name }}
+          image: {{ .Values.frontend.container.image }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: {{ .Values.frontend.container.port }}
+              protocol: TCP
+          env:
+            - name: REACT_APP_BASE_URL
+              value: http://service-backend:8080/student/add
+            - name: REACT_APP_BASE_URL_2
+              value: http://service-backend:8080/student/getAll

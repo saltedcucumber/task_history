@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/currencyIcon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currencyCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textAppearance="@style/TextAppearance.Regular.16.Tundora"
+        app:layout_constraintBottom_toBottomOf="@+id/currencyIcon"
+        app:layout_constraintStart_toEndOf="@id/currencyIcon"
+        app:layout_constraintTop_toTopOf="@+id/currencyIcon"
+        tools:text="BCH" />
+
+    <TextView
+        android:id="@+id/currencyPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:textAppearance="@style/TextAppearance.SemiBold.16.Gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="/5%" />
+
+    <TextView
+        android:id="@+id/currency_in_usd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:textAppearance="@style/TextAppearance.SemiBold.16.Tundora"
+        app:layout_constraintBottom_toBottomOf="@+id/currencyPercentage"
+        app:layout_constraintEnd_toStartOf="@id/currencyPercentage"
+        app:layout_constraintTop_toTopOf="@+id/currencyPercentage"
+        tools:text="$ 2.90" />
+</androidx.constraintlayout.widget.ConstraintLayout>

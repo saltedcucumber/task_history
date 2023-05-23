@@ -1,0 +1,9 @@
+ext {
+
+    major = 0
+    minor = 2
+    patch = 0
+
+    appVersionCode = 5
+    appVersionName = "$major.$minor.$patch"
+}

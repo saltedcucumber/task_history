@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="input_height">60dp</dimen>
+    <dimen name="insets">0dp</dimen>
+    <dimen name="button_radius">15dp</dimen>
+    <dimen name="input_radius">10dp</dimen>
+    <dimen name="message_view_radius">8dp</dimen>
+    <dimen name="message_view_stroke_height">1dp</dimen>
+    <dimen name="radio_button_padding">5dp</dimen>
+    <dimen name="order_history_margin">12dp</dimen>
+    <dimen name="currency_market_item_margin">12dp</dimen>
+
+    <dimen name="ts_10">10sp</dimen>
+    <dimen name="ts_12">12sp</dimen>
+    <dimen name="ts_14">14sp</dimen>
+    <dimen name="ts_16">16sp</dimen>
+    <dimen name="ts_17">17sp</dimen>
+    <dimen name="ts_18">18sp</dimen>
+    <dimen name="ts_24">24sp</dimen>
+
+    <dimen name="default_corners_radius">10dp</dimen>
+    <dimen name="default_token_icon_size">35dp</dimen>
+    <dimen name="default_hood_height">70dp</dimen>
+    <dimen name="default_horizontal_margin">24dp</dimen>
+    <!-- Transfer -->
+    <dimen name="default_letter_spacing">-0.02</dimen>
+    <dimen name="horizontal_margin">24dp</dimen>
+    <dimen name="margin_bottom">24dp</dimen>
+    <dimen name="image_button_padding">5dp</dimen>
+    <dimen name="end_icon_padding">6dp</dimen>
+    <dimen name="background_top_radius">10dp</dimen>
+    <dimen name="divider_stroke_width">1dp</dimen>
+    <dimen name="icon_size">35dp</dimen>
+
+    <!-- fragment_exchange -->
+    <dimen name="hood_header_margin_top">12dp</dimen>
+    <dimen name="transaction_tab_layout_margin_top">24dp</dimen>
+    <dimen name="exchange_type_layout_margin_top">12dp</dimen>
+    <dimen name="limit_transaction_price_field_margin_top">12dp</dimen>
+    <dimen name="order_button_vertical_margin">24dp</dimen>
+    <dimen name="converted_exchange_text_view_margin_top">24dp</dimen>
+    <!-- endregion -->
+
+    <!-- fragment_currency_chooser -->
+    <dimen name="currency_filter_tab_layout_margin_top">20dp</dimen>
+    <dimen name="currencies_recycler_vertical_margin">8dp</dimen>
+    <dimen name="item_transaction_margin">16dp</dimen>
+    <dimen name="history_vertical_margin">12dp</dimen>
+    <dimen name="input_vertical_margin">16dp</dimen>
+    <dimen name="terms_and_conditions_vertical_margin">16dp</dimen>
+    <dimen name="button_bottom_margin">20dp</dimen>
+    <!-- endregion -->
+</resources>

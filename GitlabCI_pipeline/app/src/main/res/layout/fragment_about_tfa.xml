@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="22dp"
+            android:padding="@dimen/image_button_padding"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/enableTfaHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/about_2fa"
+            android:textAppearance="@style/TextAppearance.SemiBold.17.Tundora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/aboutTfaIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_tfa_about"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enableTfaHeader" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/whatIsTfaButton"
+            style="@style/AppButton.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/what_is_2fa"
+            android:textAppearance="@style/TextAppearance.SemiBold.16"
+            android:textColor="@color/tundora"
+            app:icon="@drawable/ic_dropdown_collapsed"
+            app:iconGravity="end"
+            app:iconPadding="@dimen/end_icon_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aboutTfaIcon" />
+
+        <TextView
+            android:id="@+id/whatIsTfaText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:paddingBottom="12dp"
+            android:text="@string/what_is_tfa_text"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/whatIsTfaDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/whatIsTfaButton" />
+
+        <View
+            android:id="@+id/whatIsTfaDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/whatIsTfaText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/howEnableTfaButton"
+            style="@style/AppButton.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/how_to_enable_2fa"
+            android:textAppearance="@style/TextAppearance.SemiBold.16"
+            android:textColor="@color/tundora"
+            app:icon="@drawable/ic_dropdown_collapsed"
+            app:iconGravity="end"
+            app:iconPadding="@dimen/end_icon_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/whatIsTfaDivider" />
+
+        <TextView
+            android:id="@+id/howEnableTfaText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:paddingBottom="12dp"
+            android:text="@string/what_is_tfa_text"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/howEnableTfaDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/howEnableTfaButton" />
+
+        <View
+            android:id="@+id/howEnableTfaDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/howEnableTfaText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/issuesTfaButton"
+            style="@style/AppButton.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/issues_with_activating_2fa"
+            android:textAppearance="@style/TextAppearance.SemiBold.16"
+            android:textColor="@color/tundora"
+            app:icon="@drawable/ic_dropdown_collapsed"
+            app:iconGravity="end"
+            app:iconPadding="@dimen/end_icon_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/howEnableTfaDivider" />
+
+        <TextView
+            android:id="@+id/issuesTfaText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:paddingBottom="12dp"
+            android:text="@string/what_is_tfa_text"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/issuesTfaDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/issuesTfaButton" />
+
+        <View
+            android:id="@+id/issuesTfaDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/issuesTfaText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/disableTfaButton"
+            style="@style/AppButton.Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="10dp"
+            android:gravity="start|center_vertical"
+            android:text="@string/how_to_disable_2fa"
+            android:textAppearance="@style/TextAppearance.SemiBold.16"
+            android:textColor="@color/tundora"
+            app:icon="@drawable/ic_dropdown_collapsed"
+            app:iconGravity="end"
+            app:iconPadding="@dimen/end_icon_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/issuesTfaDivider" />
+
+        <TextView
+            android:id="@+id/disableTfaText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:paddingBottom="12dp"
+            android:text="@string/what_is_tfa_text"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/disableTfaDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/disableTfaButton" />
+
+        <View
+            android:id="@+id/disableTfaDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/disableTfaText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

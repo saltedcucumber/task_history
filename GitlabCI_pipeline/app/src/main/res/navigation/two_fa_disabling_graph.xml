@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/two_fa_disabling_graph"
+    app:startDestination="@id/disableTfaFragment">
+
+    <fragment
+        android:id="@+id/disableTfaFragment"
+        android:name="com.cryptoexchange.mobile.presentation.tfa.disable.DisableTfaFragment"
+        android:label="DisableTfaFragment"
+        tools:layout="@layout/fragment_disable_tfa">
+        <action
+            android:id="@+id/action_disableTfaFragment_to_disableTfaSuccessFragment"
+            app:destination="@id/disableTfaSuccessFragment"
+            app:popUpTo="@id/disableTfaFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/disableTfaSuccessFragment"
+        android:name="com.cryptoexchange.mobile.presentation.tfa.disablesuccess.DisableTfaSuccessFragment"
+        android:label="DisableTfaSuccessFragment"
+        tools:layout="@layout/fragment_disable_tfa_success" />
+</navigation>

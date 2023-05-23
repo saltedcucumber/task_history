@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/alabaster"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingVertical="@dimen/image_button_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/toolbar_trading_history_filter_menu"
+        app:title="@string/filter"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/TextAppearance.SemiBold.17.Tundora" />
+
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="22dp"
+        android:padding="@dimen/image_button_padding"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/datePickerInputLayout"
+        layout="@layout/date_picker_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <include
+        android:id="@+id/transaction_type_input_layout"
+        layout="@layout/transaction_type_drop_down_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/datePickerInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/datePickerInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/datePickerInputLayout" />
+
+    <include
+        android:id="@+id/exchangeTypeInputLayout"
+        layout="@layout/exchange_type_drop_down_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_horizontal_margin"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/transaction_type_input_layout"
+        app:layout_constraintStart_toStartOf="@+id/transaction_type_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/transaction_type_input_layout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/applyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/apply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/exchangeTypeInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/exchangeTypeInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/exchangeTypeInputLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

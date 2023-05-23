@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Values.db.ReleaseName }}
+  labels:
+    app: {{ .Values.db.labels.app }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.db.labels.app }}
+  serviceName: {{ .Values.db.serviceName }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.db.labels.app }}
+    spec:
+      containers:
+        - name: {{ .Values.db.container.name }}
+          image: {{ .Values.db.container.image }}
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: {{ .Values.db.volumes.volumeMounts.path }}
+              name: {{ .Values.db.volumes.volumeMounts.name }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.db.port }}
+              protocol: TCP
+      volumes:
+        - name: {{ .Values.db.volumes.volumeMounts.name }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.db.volumes.persistentVolumeClaim.claimName }}
+

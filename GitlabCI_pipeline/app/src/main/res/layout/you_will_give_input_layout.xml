@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/default_rounded_corners_alabaster_background">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/youWillGiveGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.cryptoexchange.mobile.core.view.CurrencyTextInputLayout
+        android:id="@+id/youWillGiveInput"
+        style="@style/AppInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="24dp"
+        android:hint="@string/you_will_give"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/youWillGiveGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/youWillGiveEditText"
+            style="@style/Widget.TextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:minHeight="60dp" />
+    </com.cryptoexchange.mobile.core.view.CurrencyTextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/youWillGiveCurrencyDropDown"
+        style="@style/TextAppearance.Medium.14.Tundora"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/default_rounded_corners_alabaster_background"
+        android:backgroundTint="@color/zumthor"
+        android:drawableEnd="@drawable/ic_drop_down_arrow_closed"
+        android:drawablePadding="5dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:minHeight="60dp"
+        android:paddingStart="8dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/youWillGiveGuideline"
+        app:layout_constraintTop_toTopOf="@id/youWillGiveInput"
+        tools:drawableStart="@drawable/ic_usd"
+        tools:text="USD" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+sonarqube {
+  properties {
+    property "sonar.projectKey", "decent-world-android-ank2652ds65ds36sdsdd"
+    property "sonar.projectName", "decent-world-android"	
+  }
+}
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="22dp"
+            android:padding="@dimen/image_button_padding"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/termsAndConditionsHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/agreement"
+            android:textAppearance="@style/TextAppearance.SemiBold.17.Tundora"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/buttonBack" />
+
+        <TextView
+            android:id="@+id/termsAndConditionsTextOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="26dp"
+            android:text="@string/terms_and_conditions_one"
+            android:textAppearance="@style/TextAppearance.Regular.14.Tundora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsHeader" />
+
+        <View
+            android:id="@+id/termsAndConditionsDividerOne"
+            android:layout_width="90dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/terms_and_conditions_vertical_margin"
+            android:background="@drawable/terms_and_conditions_divider_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsTextOne" />
+
+        <TextView
+            android:id="@+id/termsAndConditionsTextTwo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/terms_and_conditions_vertical_margin"
+            android:text="@string/terms_and_conditions_two"
+            android:textAppearance="@style/TextAppearance.Regular.14.Tundora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsDividerOne" />
+
+        <View
+            android:id="@+id/termsAndConditionsDividerTwo"
+            android:layout_width="90dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/terms_and_conditions_vertical_margin"
+            android:background="@drawable/terms_and_conditions_divider_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsTextTwo" />
+
+        <TextView
+            android:id="@+id/termsAndConditionsTextThree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/terms_and_conditions_vertical_margin"
+            android:text="@string/terms_and_conditions_one"
+            android:textAppearance="@style/TextAppearance.Regular.14.Tundora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsDividerTwo" />
+
+        <View
+            android:id="@+id/termsAndConditionsDividerThree"
+            android:layout_width="90dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/terms_and_conditions_vertical_margin"
+            android:background="@drawable/terms_and_conditions_divider_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsTextThree" />
+
+        <TextView
+            android:id="@+id/termsAndConditionsTextFour"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/terms_and_conditions_vertical_margin"
+            android:text="@string/terms_and_conditions_four"
+            android:textAppearance="@style/TextAppearance.Regular.14.Tundora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsDividerThree" />
+
+        <View
+            android:id="@+id/termsAndConditionsDividerFour"
+            android:layout_width="90dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/terms_and_conditions_vertical_margin"
+            android:background="@drawable/terms_and_conditions_divider_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsTextFour" />
+
+        <TextView
+            android:id="@+id/termsAndConditionsTextFive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/terms_and_conditions_vertical_margin"
+            android:text="@string/terms_and_conditions_five"
+            android:textAppearance="@style/TextAppearance.Regular.14.Tundora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/termsAndConditionsDividerFour" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

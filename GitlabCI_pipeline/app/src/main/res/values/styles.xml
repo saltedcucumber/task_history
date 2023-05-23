@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorOnSurface">@color/malibu</item>
+        <item name="colorSecondary">@color/malibu</item>
+
+        <item name="materialButtonStyle">@style/AppButton.Filled</item>
+        <item name="materialButtonOutlinedStyle">@style/AppButton.Outlined</item>
+        <item name="radioButtonStyle">@style/RadioButton</item>
+        <item name="autoCompleteTextViewStyle">@style/AutoCompleteTextStyle</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <item name="android:enforceStatusBarContrast" tools:targetApi="q">true</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">true</item>
+    </style>
+
+    <style name="Theme.AppTheme.Launch">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+    <style name="RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/radio_button_view_selector</item>
+        <item name="android:paddingHorizontal">@dimen/radio_button_padding</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">@dimen/insets</item>
+        <item name="android:insetBottom">@dimen/insets</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="android:height">@dimen/button_height</item>
+        <item name="android:textAppearance">@style/TextAppearance.SemiBold.18</item>
+    </style>
+
+    <style name="AppButton.Filled">
+        <item name="android:textColor">@color/filled_button_text_color_selector</item>
+    </style>
+
+    <style name="AppButton.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:insetTop">@dimen/insets</item>
+        <item name="android:insetBottom">@dimen/insets</item>
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="strokeColor">@color/outlined_button_stroke_color_selector</item>
+        <item name="android:textAppearance">@style/TextAppearance.SemiBold.18.Malibu</item>
+    </style>
+
+    <style name="AppButton.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAppearance">@style/TextAppearance.Medium.14</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+
+    <style name="AppInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/outlined_input_layout_stroke_color_selector</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Regular.12.Tundora</item>
+        <item name="boxStrokeErrorColor">@color/bittersweet</item>
+        <item name="errorTextColor">@color/bittersweet</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="android:textColorHint">@color/input_layout_hint_color_selector</item>
+        <item name="android:textAppearance">@style/TextAppearance.Regular.16.Tundora</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/input_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/input_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/input_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/input_radius</item>
+    </style>
+
+    <style name="AppInputLayout.DropDownMenu" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/outlined_input_layout_stroke_color_selector</item>
+        <item name="android:textAppearance">@style/TextAppearance.Regular.14.Tundora</item>
+        <item name="android:textColorHint">@color/gray</item>
+    </style>
+
+    <style name="Widget.TextInputEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textAppearance">@style/TextAppearance.Regular.16</item>
+        <item name="android:textColor">@color/tundora</item>
+        <item name="hintTextColor">@color/gray</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
+    <style name="Widget.TextInputEditText.AuthorizationField" parent="Widget.TextInputEditText">
+        <item name="android:maxLength">50</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.SemiBold.18.Tundora</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">-0.02sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:actionMenuTextColor">@color/colorPrimary</item>
+        <item name="android:actionMenuTextAppearance">@style/ToolbarTextMenuAppearance</item>
+    </style>
+
+    <style name="ToolbarTextMenuAppearance" parent="TextAppearance.SemiBold.18.Tundora">
+        <item name="android:actionMenuTextColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="AutoCompleteTextStyle" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:textAppearance">@style/TextAppearance.Medium.14</item>
+        <item name="android:textColor">@color/malibu</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="AppBottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@android:color/white</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemIconTint">@drawable/bottom_tab_icon_color_selector</item>
+        <item name="itemTextColor">@drawable/bottom_tab_text_color_selector</item>
+        <item name="itemTextAppearanceInactive">@style/AppBottomNavigation.TextAppearance</item>
+        <item name="itemTextAppearanceActive">@style/AppBottomNavigation.TextAppearance</item>
+    </style>
+
+    <style name="AppBottomNavigation.TextAppearance">
+        <item name="android:textSize">@dimen/ts_10</item>
+        <item name="android:textAppearance">@style/TextAppearance.Medium</item>
+        <item name="android:letterSpacing">@dimen/default_letter_spacing</item>
+        <item name="android:gravity">center_horizontal|top</item>
+    </style>
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:textSize">@dimen/ts_16</item>
+        <item name="colorControlHighlight">@color/gray</item>
+        <item name="android:textColorHint">@color/gray</item>
+    </style>
+
+    <style name="AppSwitchMaterial" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="thumbTint">@color/switch_thumb_tint</item>
+        <item name="trackTint">@color/switch_track_tint</item>
+    </style>
+
+    <style name="ShapeAppearance.App.LargeComponent" parent="">
+        <item name="cornerSizeTopLeft">@dimen/default_corners_radius</item>
+        <item name="cornerSizeTopRight">@dimen/default_corners_radius</item>
+    </style>
+
+    <style name="Widget.App.MaterialCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
+    </style>
+
+    <style name="TextAppearance" parent="TextAppearance.AppCompat" />
+
+    <!-- San Francisco Regular-->
+    <style name="TextAppearance.Regular">
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+    <style name="TextAppearance.Regular.12">
+        <item name="android:textSize">@dimen/ts_12</item>
+    </style>
+
+    <style name="TextAppearance.Regular.12.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+
+    <style name="TextAppearance.Regular.12.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="TextAppearance.Regular.12.Malibu">
+        <item name="android:textColor">@color/malibu</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14">
+        <item name="android:textSize">@dimen/ts_14</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16">
+        <item name="android:textSize">@dimen/ts_16</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <!-- endregion-->
+
+    <!-- San Francisco Medium-->
+    <style name="TextAppearance.Medium">
+        <item name="android:fontFamily">@font/sf_medium</item>
+    </style>
+
+    <style name="TextAppearance.Medium.10">
+        <item name="android:textSize">@dimen/ts_10</item>
+    </style>
+
+    <style name="TextAppearance.Medium.10.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14">
+        <item name="android:textSize">@dimen/ts_14</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.Bittersweet">
+        <item name="android:textColor">@color/bittersweet</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.Malibu">
+        <item name="android:textColor">@color/malibu</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.Shamrock">
+        <item name="android:textColor">@color/shamrock</item>
+    </style>
+    <!-- endregion-->
+
+    <!-- San Francisco SemiBold-->
+
+    <style name="TextAppearance.SemiBold">
+        <item name="android:fontFamily">@font/sf_semibold</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.16">
+        <item name="android:textSize">@dimen/ts_16</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.16.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.16.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.16.Malibu">
+        <item name="android:textColor">@color/malibu</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.17">
+        <item name="android:textSize">@dimen/ts_17</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.17.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.18">
+        <item name="android:textSize">@dimen/ts_18</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.18.Malibu">
+        <item name="android:textColor">@color/malibu</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.18.PuertoRico">
+        <item name="android:textColor">@color/puertoRico</item>
+    </style>
+
+    <style name="TextAppearance.SemiBold.18.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+    <!-- endregion-->
+
+    <!-- San Francisco Bold-->
+    <style name="TextAppearance.Bold">
+        <item name="android:fontFamily">@font/sf_bold</item>
+    </style>
+
+    <style name="TextAppearance.Bold.24">
+        <item name="android:textSize">@dimen/ts_24</item>
+    </style>
+
+    <style name="TextAppearance.Bold.24.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+    <!-- endregion-->
+
+    <!-- San Francisco H1-->
+    <style name="TextAppearance.H1">
+        <item name="android:fontFamily">@font/sf_heavy</item>
+    </style>
+
+    <style name="TextAppearance.H1.24">
+        <item name="android:textSize">@dimen/ts_24</item>
+    </style>
+
+    <style name="TextAppearance.H1.24.Tundora">
+        <item name="android:textColor">@color/tundora</item>
+    </style>
+    <!-- endregion-->
+</resources>

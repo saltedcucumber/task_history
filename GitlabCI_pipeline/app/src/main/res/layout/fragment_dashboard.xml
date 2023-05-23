@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/dashboard_bottom_tab"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/TextAppearance.SemiBold.17.Tundora" />
+
+        <View
+            android:id="@+id/accountOverviewBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/balance_background"
+            android:elevation="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/accountOverviewBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/accountOverview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:text="@string/account_overview"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/accountOverviewBackground" />
+
+        <ImageView
+            android:id="@+id/accountOverviewDropdown"
+            android:layout_width="24dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="18dp"
+            android:elevation="2dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_dropdown_collapsed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/accountOverviewBackground" />
+
+        <ImageView
+            android:id="@+id/accountProtectionIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="13dp"
+            android:elevation="2dp"
+            android:src="@drawable/ic_protection_not_finished"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/accountOverview" />
+
+        <TextView
+            android:id="@+id/basicProtection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="13dp"
+            android:elevation="2dp"
+            android:text="@string/basic_protection"
+            android:textAppearance="@style/TextAppearance.Regular.14.Tundora"
+            app:layout_constraintStart_toEndOf="@id/accountProtectionIcon"
+            app:layout_constraintTop_toBottomOf="@+id/accountOverview" />
+
+        <TextView
+            android:id="@+id/protectionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:background="@drawable/transaction_status_background"
+            android:elevation="2dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:textAppearance="@style/TextAppearance.Medium.14"
+            app:layout_constraintBottom_toTopOf="@id/tfaButton"
+            app:layout_constraintStart_toStartOf="@+id/basicProtection"
+            app:layout_constraintTop_toBottomOf="@+id/basicProtection"
+            tools:text="Pending"
+            tools:textColor="@color/flamingo" />
+
+        <TextView
+            android:id="@+id/tfaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:elevation="2dp"
+            android:text="@string/activate_2fa_for_full_protection"
+            android:textAppearance="@style/TextAppearance.Medium.14.Malibu"
+            app:layout_constraintStart_toStartOf="@+id/protectionStatus"
+            app:layout_constraintTop_toBottomOf="@+id/protectionStatus" />
+
+        <View
+            android:id="@+id/accountOverviewDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gray"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tfaButton" />
+
+        <ImageView
+            android:id="@+id/emailIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="18dp"
+            android:elevation="2dp"
+            android:src="@drawable/ic_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accountOverviewDivider" />
+
+        <TextView
+            android:id="@+id/emailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:elevation="2dp"
+            android:text="@string/email"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toEndOf="@+id/emailIcon"
+            app:layout_constraintTop_toTopOf="@+id/emailIcon" />
+
+        <TextView
+            android:id="@+id/emailValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:elevation="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/emailTitle"
+            app:layout_constraintTop_toBottomOf="@+id/emailTitle"
+            tools:text="jenya462@gmail.com" />
+
+        <View
+            android:id="@+id/accountOverviewBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailValue" />
+
+        <ImageButton
+            android:id="@+id/depositButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="24dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_deposit_button"
+            app:layout_constraintEnd_toStartOf="@+id/exchangeButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accountOverviewBottom" />
+
+        <TextView
+            android:id="@+id/depositButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/deposit"
+            android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+            app:layout_constraintStart_toStartOf="@id/depositButton"
+            app:layout_constraintTop_toTopOf="@id/depositButton" />
+
+        <ImageButton
+            android:id="@+id/exchangeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_exchange_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/depositButton"
+            app:layout_constraintTop_toBottomOf="@id/accountOverviewBottom" />
+
+        <TextView
+            android:id="@+id/exchangeButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/exchange"
+            android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+            app:layout_constraintStart_toStartOf="@id/exchangeButton"
+            app:layout_constraintTop_toTopOf="@id/exchangeButton" />
+
+        <View
+            android:id="@+id/currencyBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/balance_background"
+            android:elevation="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/currencyRecycler"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/depositButton" />
+
+        <TextView
+            android:id="@+id/currencyToUsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:text="@string/currency_to_usd"
+            android:textAppearance="@style/TextAppearance.Medium.14.Gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/currencyBackground" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/currencyRecycler"
+            android:layout_width="0dp"
+            android:layout_height="286dp"
+            android:layout_marginTop="8dp"
+            android:elevation="2dp"
+            android:nestedScrollingEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currencyToUsd" />
+
+        <View
+            android:id="@+id/newsBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="-10dp"
+            android:background="@drawable/balance_background"
+            android:elevation="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currencyRecycler" />
+
+        <TextView
+            android:id="@+id/news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:elevation="3dp"
+            android:text="@string/news"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/newsBackground" />
+
+        <include
+            android:id="@+id/firstNews"
+            layout="@layout/item_news"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news" />
+
+        <include
+            android:id="@+id/secondNews"
+            layout="@layout/item_news"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstNews" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/moreNewsButton"
+            style="@style/AppButton.Text"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:elevation="3dp"
+            android:text="@string/more_news"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/secondNews" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

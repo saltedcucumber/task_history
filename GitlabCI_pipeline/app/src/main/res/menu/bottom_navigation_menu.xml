@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:menuCategory="secondary">
+    <item
+        android:id="@+id/dashboardDestination"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_tab_dashboard"
+        android:title="@string/dashboard_bottom_tab" />
+    <item
+        android:id="@+id/exchangeDestination"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_tab_exchange"
+        android:title="@string/exchange_bottom_tab" />
+    <item
+        android:id="@+id/tradingDestination"
+        android:enabled="true"
+        android:icon="@drawable/ic_dashboard_tab_trading"
+        android:title="@string/trading_bottom_tab" />
+    <item
+        android:id="@+id/balanceDestination"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_tab_balance"
+        android:title="@string/balance_bottom_tab" />
+
+    <item
+        android:id="@+id/moreInfoDestination"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_tab_more"
+        android:title="@string/more_bottom_tab" />
+</menu>

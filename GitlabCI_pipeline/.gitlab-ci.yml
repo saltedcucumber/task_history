@@ -1,0 +1,28 @@
+image: maven:3.8.6-eclipse-temurin-11-alpine 
+
+stages:
+    - build
+    - deploy
+
+build_app:
+    stage: build
+    script:
+       - mvn clean
+       - mvn package
+    only:
+    - merge_requests
+    - main
+
+deploy_to_Github:
+   stage: deploy
+   script:
+     - git config --global user.email "************"
+     - git config --global user.name "*************"
+     - git add .
+     - git checkout  main
+     - git commit -m "Initial commit"
+     #- git commit -m "first commit"
+     - git branch -M main
+     - git remote add github_origin https://github.com/saltedcucumber/Test-CI.git
+     - git push -f github_origin
+     

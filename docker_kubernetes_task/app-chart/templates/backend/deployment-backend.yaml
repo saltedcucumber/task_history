@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.backend.ReleaseName }}
+  labels:
+    app: {{ .Values.backend.labels.app }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.backend.labels.app }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.backend.labels.app }}
+    spec:
+      containers:
+        - name: {{ .Values.backend.container.name }}
+          image: {{ .Values.backend.container.image }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: {{ .Values.backend.container.port }}
+              protocol: TCP
+          env:
+            - name: {{ .Values.backend.env.SpringDatasourceUrl.name }}
+              value: {{ .Values.backend.env.SpringDatasourceUrl.value }}
+            - name: {{ .Values.backend.env.SpringDatasourceUsername.name }}
+              value: {{ .Values.backend.env.SpringDatasourceUsername.value }}
+            - name: {{ .Values.backend.env.SpringDatasourcePassword.name }}
+              value: {{ .Values.backend.env.SpringDatasourcePassword.value }}      

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/currencyPair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/currency_pair_background"
+        android:paddingHorizontal="8dp"
+        android:textAppearance="@style/TextAppearance.SemiBold.18.Malibu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="BTC-USDT" />
+
+    <TextView
+        android:id="@+id/orderType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/order_type_background"
+        android:paddingHorizontal="8dp"
+        android:textAppearance="@style/TextAppearance.SemiBold.18.PuertoRico"
+        app:layout_constraintBottom_toBottomOf="@id/currencyPair"
+        app:layout_constraintStart_toEndOf="@id/currencyPair"
+        app:layout_constraintTop_toTopOf="@id/currencyPair"
+        tools:text="Buy" />
+
+    <TextView
+        android:id="@+id/orderIdTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start"
+        android:text="@string/id"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintEnd_toStartOf="@id/orderOpenTimeTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currencyPair" />
+
+    <TextView
+        android:id="@+id/orderId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toStartOf="@id/orderOpenTime"
+        app:layout_constraintStart_toStartOf="@+id/orderIdTitle"
+        app:layout_constraintTop_toBottomOf="@id/orderIdTitle"
+        tools:text="1234567890" />
+
+    <TextView
+        android:id="@+id/orderOpenTimeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:gravity="start"
+        android:text="@string/open_time"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/orderIdTitle"
+        app:layout_constraintTop_toTopOf="@+id/orderIdTitle" />
+
+    <TextView
+        android:id="@+id/orderOpenTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toEndOf="@+id/orderOpenTimeTitle"
+        app:layout_constraintStart_toEndOf="@id/orderId"
+        app:layout_constraintTop_toBottomOf="@id/orderOpenTimeTitle"
+        tools:text="1234567890" />
+
+    <TextView
+        android:id="@+id/orderAmountTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="start"
+        android:text="@string/amount"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintEnd_toStartOf="@id/orderStatusTitle"
+        app:layout_constraintStart_toStartOf="@+id/orderId"
+        app:layout_constraintTop_toBottomOf="@id/orderOpenTime" />
+
+    <TextView
+        android:id="@+id/orderAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toStartOf="@id/orderStatus"
+        app:layout_constraintStart_toStartOf="@+id/orderAmountTitle"
+        app:layout_constraintTop_toBottomOf="@id/orderAmountTitle"
+        tools:text="1234567890" />
+
+    <TextView
+        android:id="@+id/orderStatusTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/status"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintEnd_toEndOf="@+id/orderOpenTime"
+        app:layout_constraintStart_toEndOf="@id/orderAmountTitle"
+        app:layout_constraintTop_toTopOf="@+id/orderAmountTitle" />
+
+    <TextView
+        android:id="@+id/orderStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toEndOf="@+id/orderStatusTitle"
+        app:layout_constraintStart_toEndOf="@id/orderAmount"
+        app:layout_constraintTop_toBottomOf="@id/orderStatusTitle"
+        tools:text="1234567890" />
+
+    <TextView
+        android:id="@+id/orderPriceTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="start"
+        android:text="@string/price"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintEnd_toStartOf="@id/orderTotalTitle"
+        app:layout_constraintStart_toStartOf="@+id/orderAmount"
+        app:layout_constraintTop_toBottomOf="@id/orderAmount" />
+
+    <TextView
+        android:id="@+id/orderPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toStartOf="@id/orderTotal"
+        app:layout_constraintStart_toStartOf="@+id/orderPriceTitle"
+        app:layout_constraintTop_toBottomOf="@id/orderPriceTitle"
+        tools:text="1234567890" />
+
+    <TextView
+        android:id="@+id/orderTotalTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="@string/total"
+        android:textAppearance="@style/TextAppearance.Regular.14.Gray"
+        app:layout_constraintEnd_toEndOf="@+id/orderStatus"
+        app:layout_constraintStart_toEndOf="@id/orderPriceTitle"
+        app:layout_constraintTop_toTopOf="@+id/orderPriceTitle" />
+
+    <TextView
+        android:id="@+id/orderTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.Medium.14.Tundora"
+        app:layout_constraintEnd_toEndOf="@+id/orderTotalTitle"
+        app:layout_constraintStart_toEndOf="@id/orderPrice"
+        app:layout_constraintTop_toBottomOf="@id/orderTotalTitle"
+        tools:text="1234567890" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/closeOrderButton"
+        style="@style/AppButton.Outlined"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/close"
+        app:layout_constraintBottom_toTopOf="@id/bottomDivider"
+        app:layout_constraintEnd_toEndOf="@+id/orderTotal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/orderPrice"
+        app:layout_constraintTop_toBottomOf="@id/orderPrice"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/bottomDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+apply from: "$project.rootDir/scripts/git_hook.gradle"
+apply from: "$project.rootDir/code_quality/detekt.gradle"
+apply from: "$project.rootDir/code_style/ktlint.gradle"
+apply plugin: 'org.sonarqube'
+
+buildscript {
+    ext.kotlin_version = '1.6.20'
+    ext.build_gradle = '7.1.1'
+    ext.google_services = '4.3.10'
+    ext.crashlytics = '2.8.1'
+    ext.springBootVersion = '2.6.4'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$build_gradle"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.gms:google-services:$google_services"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlytics"
+        classpath "com.google.firebase:firebase-appdistribution-gradle:3.0.1"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.3"
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+
+        maven {
+            credentials {
+                username "nexus.user"
+                password "50wlyxxz%?bzBM"
+            }
+
+            url "https://nexus.inno.ws/repository/CryptoExchange/"
+            content {
+                includeGroup "com.innowise-group.sdk"
+            }
+        }
+
+        //mavenLocal()
+    }
+}
+
+apply from: "$project.rootDir/distribution/sonarqube"
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

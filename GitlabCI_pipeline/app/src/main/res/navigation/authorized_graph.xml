@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authorized_graph"
+    app:startDestination="@id/dashboardDestination">
+
+    <dialog
+        android:id="@+id/tradingHistoryDetailsBottomSheet"
+        android:name="com.cryptoexchange.mobile.presentation.more.tradinghistory.details.TradingHistoryDetailsBottomSheet"
+        android:label="TradingHistoryDetailsBottomSheet"
+        tools:layout="@layout/fragment_trading_history_details" />
+    <fragment
+        android:id="@+id/dashboardDestination"
+        android:name="com.cryptoexchange.mobile.presentation.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardDestination_to_two_fa_enabling_graph"
+            app:destination="@id/two_fa_enabling_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/exchangeDestination"
+        android:name="com.cryptoexchange.mobile.presentation.exchange.ExchangeFragment"
+        android:label="Exchange"
+        tools:layout="@layout/fragment_exchange">
+        <action
+            android:id="@+id/action_exchangeDestination_to_orderPreviewFragment"
+            app:destination="@id/orderPreviewFragment" />
+        <action
+            android:id="@+id/action_exchangeDestination_to_currencyChooserFragment"
+            app:destination="@id/currencyChooserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tradingDestination"
+        android:name="com.cryptoexchange.mobile.presentation.trading.TradingFragment"
+        android:label="Trading"
+        tools:layout="@layout/fragment_trading">
+        <action
+            android:id="@+id/action_tradingDestination_to_currencyMarketFragment"
+            app:destination="@id/currencyMarketFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/balanceDestination"
+        android:name="com.cryptoexchange.mobile.presentation.balancecontainer.BalanceContainerFragment"
+        android:label="Balance"
+        tools:layout="@layout/fragment_balance_container">
+        <action
+            android:id="@+id/action_balanceDestination_to_depositFragment"
+            app:destination="@id/depositFragment" />
+        <action
+            android:id="@+id/action_balanceDestination_to_withdrawFragment"
+            app:destination="@id/withdrawFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreInfoDestination"
+        android:name="com.cryptoexchange.mobile.presentation.more.MoreFragment"
+        android:label="More"
+        tools:layout="@layout/fragment_more">
+        <action
+            android:id="@+id/action_moreInfoDestination_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_moreInfoDestination_to_tradeHistoryFragment"
+            app:destination="@id/tradingHistoryFragment" />
+        <action
+            android:id="@+id/action_moreInfoDestination_to_transactionsHistoryFragment"
+            app:destination="@id/transactionHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderPreviewFragment"
+        android:name="com.cryptoexchange.mobile.presentation.exchange.order.OrderPreviewFragment"
+        android:label="OrderPreviewFragment"
+        tools:layout="@layout/fragment_order_preview">
+        <action
+            android:id="@+id/action_orderPreviewFragment_to_successfulConversionFragment"
+            app:destination="@id/successfulConversionFragment"
+            app:popUpTo="@id/exchangeDestination" />
+    </fragment>
+    <fragment
+        android:id="@+id/successfulConversionFragment"
+        android:name="com.cryptoexchange.mobile.presentation.exchange.success.SuccessfulConversionFragment"
+        android:label="SuccessfulConversionFragment"
+        tools:layout="@layout/fragment_withdraw_confirmation" />
+    <fragment
+        android:id="@+id/currencyChooserFragment"
+        android:name="com.cryptoexchange.mobile.presentation.exchange.filters.CurrencyChooserFragment"
+        android:label="CurrencyChooserFragment"
+        tools:layout="@layout/fragment_currency_chooser" />
+    <fragment
+        android:id="@+id/depositFragment"
+        android:name="com.cryptoexchange.mobile.presentation.balancecontainer.balance.deposit.DepositFragment"
+        android:label="DepositFragment"
+        tools:layout="@layout/fragment_deposit" />
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.transactionhistory.TransactionHistoryFragment"
+        android:label="TransactionHistoryFragment"
+        tools:layout="@layout/fragment_transaction_history">
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_transactionHistoryFilterFilterFragment"
+            app:destination="@id/transactionHistoryFilterFilterFragment" />
+        <action
+            android:id="@+id/action_transactionHistoryFragment_to_withdrawConfirmationFragment"
+            app:destination="@id/withdrawConfirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_two_fa_enabling_graph"
+            app:destination="@id/two_fa_enabling_graph" />
+        <action
+            android:id="@+id/action_profileFragment_to_twoFAStatusFragment"
+            app:destination="@id/twoFAStatusFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+
+    <!-- Should be replaced by change password flow in nested graph-->
+    <fragment
+        android:id="@+id/twoFAStatusFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.profile.twofastatus.TwoFAStatusFragment"
+        android:label="TwoFAStatusFragment"
+        tools:layout="@layout/fragment_two_fa_status">
+        <action
+            android:id="@+id/action_twoFAStatusFragment_to_two_fa_disabling_graph"
+            app:destination="@id/two_fa_disabling_graph" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.cryptoexchange.mobile.presentation.auth.resetpass.ResetPasswordFragment"
+        android:label="ResetPasswordFragment">
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_resetPassSuccessFragment"
+            app:destination="@id/resetPassSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPassSuccessFragment"
+        android:name="com.cryptoexchange.mobile.presentation.auth.resetpasssuccess.ResetPassSuccessFragment"
+        android:label="ResetPassSuccessFragment" />
+    <!-- end-->
+    <fragment
+        android:id="@+id/tradingHistoryFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.tradinghistory.TradingHistoryFragment"
+        tools:layout="@layout/fragment_trading_history">
+        <action
+            android:id="@+id/action_tradeHistoryFragment_to_tradingHistoryDetailsBottomSheet"
+            app:destination="@id/tradingHistoryDetailsBottomSheet" />
+        <action
+            android:id="@+id/action_tradeHistoryFragment_to_tradingHistoryFilterFragment"
+            app:destination="@id/tradingHistoryFilterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/withdrawFragment"
+        android:name="com.cryptoexchange.mobile.presentation.balancecontainer.balance.withdraw.WithdrawFragment"
+        android:label="WithdrawFragment"
+        tools:layout="@layout/fragment_withdraw">
+        <action
+            android:id="@+id/action_withdrawFragment_to_withdrawConfirmationFragment"
+            app:destination="@id/withdrawConfirmationFragment"
+            app:popUpTo="@id/balanceDestination" />
+    </fragment>
+    <fragment
+        android:id="@+id/withdrawConfirmationFragment"
+        android:name="com.cryptoexchange.mobile.presentation.balancecontainer.balance.withdraw.confirmation.WithdrawConfirmationFragment"
+        android:label="WithdrawConfirmationFragment"
+        tools:layout="@layout/fragment_withdraw_confirmation">
+        <action
+            android:id="@+id/action_withdrawConfirmationFragment_to_withdrawCancellationFragment"
+            app:destination="@id/withdrawCancellationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tradingHistoryFilterFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.tradinghistory.filter.TradingHistoryFilterFragment"
+        android:label="TradingHistoryFilterFragment"
+        tools:layout="@layout/fragment_trading_history_filter" />
+    <fragment
+        android:id="@+id/transactionHistoryFilterFilterFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.transactionhistory.filter.TransactionHistoryFilterFragment"
+        android:label="TransactionHistoryFilterFilterFragment"
+        tools:layout="@layout/fragment_transaction_history_filter" />
+
+    <fragment
+        android:id="@+id/withdrawCancellationFragment"
+        android:name="com.cryptoexchange.mobile.presentation.balancecontainer.balance.withdraw.cancellation.WithdrawCancellationFragment"
+        android:label="WithdrawCancellationFragment"
+        tools:layout="@layout/fragment_withdraw_cancellation" />
+    <fragment
+        android:id="@+id/verificationFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.verification.VerificationFragment"
+        tools:layout="@layout/fragment_verification" />
+
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.profile.changepassword.ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/changePasswordSuccessFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.profile.changepassuccess.ChangePasswordSuccessFragment"
+        tools:layout="@layout/fragment_change_password_success" />
+
+    <fragment
+        android:id="@+id/activityLogFragment"
+        android:name="com.cryptoexchange.mobile.presentation.more.activitylog.ActivityLogFragment"
+        tools:layout="@layout/fragment_activity_log" />
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.cryptoexchange.mobile.presentation.dashboard.news.NewsFragment"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/currencyMarketFragment"
+        android:name="com.cryptoexchange.mobile.presentation.trading.market.CurrencyMarketFragment"
+        android:label="CurrencyMarketFragment"
+        tools:layout="@layout/fragment_currency_market" />
+
+    <include app:graph="@navigation/two_fa_enabling_graph" />
+    <include app:graph="@navigation/two_fa_disabling_graph" />
+</navigation>
