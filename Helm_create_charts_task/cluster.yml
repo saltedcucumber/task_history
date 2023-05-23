@@ -1,0 +1,18 @@
+nodes:
+#    - address: 10.202.33.149
+#      user: rke_cluster
+#     role:
+#     - controlplane
+#     - etcd
+#     ssh_key_path: /etc/ssh/authorized_keys 
+#     port: 2222
+    - address: 192.168.100.51
+      user: test
+      role:
+      - worker
+    - address: 192.168.100.52
+      user: test2
+      role:
+      - controlplane
+      - etcd
+      

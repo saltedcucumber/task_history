@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.configMap.name }}
+data:
+  data: |
+    <!DOCTYPE html>
+    <html lang='en'>
+      <head>
+        <title>NGINX</title>
+      <head>
+      <body>
+        <h1>NGINX</h1>
+      </body>
+    </html>
